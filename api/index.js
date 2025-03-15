@@ -73,10 +73,9 @@ app.post("/api/extract-text", upload.single("file"), async (req, res) => {
 //   app.listen(PORT, () => console.log(`Local server running on port ${PORT}`));
 // }
 
+// Server configuration
 const PORT = process.env.PORT || 5000;
-
 app.listen(PORT, '0.0.0.0', () => {
   console.log(`Server running on ${PORT}`);
-})
-
-module.exports = app;
+  console.log('NODE_ENV:', process.env.NODE_ENV);
+});
