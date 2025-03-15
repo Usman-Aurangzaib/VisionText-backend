@@ -1,0 +1,12 @@
+[build]
+command = "npm run build"
+watch = ["api/**", "package.json"]
+
+[deploy]
+start_command = "npm start"
+auto_rollback = true
+
+[environments]
+  [environments.production]
+  NODE_ENV = "production"
+  PORT = "5000"

@@ -69,10 +69,15 @@ app.post("/api/extract-text", upload.single("file"), async (req, res) => {
 });
 
 // For local development only
-if (process.env.NODE_ENV !== 'production') {
-  const PORT = process.env.PORT || 5000;
-  app.listen(PORT, () => console.log(`Local server running on port ${PORT}`));
-}
+// if (process.env.NODE_ENV !== 'production') {
+//   const PORT = process.env.PORT || 5000;
+//   app.listen(PORT, () => console.log(`Local server running on port ${PORT}`));
+// }
 
-// Export the app for Vercel
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Server running on ${PORT}`);
+})
+
 module.exports = app;

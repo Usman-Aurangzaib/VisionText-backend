@@ -2,13 +2,14 @@
   "name": "backend",
   "version": "1.0.0",
   "main": "server.js",
-  "engines": {
-    "node": "18"
-  },
   "scripts": {
     "start": "node api/index.js",
-    "dev": "node api/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npm install --omit=dev && npm rebuild sharp",
+    "preinstall": "npm config set legacy-peer-deps true"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
   },
   "keywords": [],
   "author": "",
