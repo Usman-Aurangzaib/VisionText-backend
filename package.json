@@ -4,8 +4,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node api/index.js",
-    "build": "npm install --omit=dev && npm rebuild sharp",
-    "preinstall": "npm config set legacy-peer-deps true"
+    "build": "npm install --omit=dev && npm rebuild sharp"
   },
   "engines": {
     "node": ">=18.0.0",

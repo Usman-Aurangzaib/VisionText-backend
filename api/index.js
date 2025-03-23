@@ -23,6 +23,10 @@ app.use(express.json());
 const storage = multer.memoryStorage();
 const upload = multer({ storage });
 
+
+app.get('/health', (req, res) => {
+  res.status(200).send('OK');
+});
 // Root route handler
 app.get('/', (req, res) => {
   res.status(200).send('Backend API is running!');
@@ -67,15 +71,8 @@ app.post("/api/extract-text", upload.single("file"), async (req, res) => {
   }
 });
 
-// For local development only
-// if (process.env.NODE_ENV !== 'production') {
-//   const PORT = process.env.PORT || 5000;
-//   app.listen(PORT, () => console.log(`Local server running on port ${PORT}`));
-// }
-
 // Server configuration
-const PORT = process.env.PORT || 5000;
+const  PORT = process.env.PORT || 3000;
 app.listen(PORT, '0.0.0.0', () => {
   console.log(`Server running on ${PORT}`);
-  console.log('NODE_ENV:', process.env.NODE_ENV);
 });
